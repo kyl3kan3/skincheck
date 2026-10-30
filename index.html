@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkinCheck — Skin scan → routine check</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>SkinCheck</h1>
+      <p class="tagline">Skin scan → routine check. One selfie, plain-language results.</p>
+    </header>
+
+    <section id="capture-card" class="card">
+      <h2>1. Add a face photo</h2>
+      <p class="hint">Front-facing, well-lit, no makeup for the clearest read. Your photo is sent only to the skin analysis service and is not stored by SkinCheck.</p>
+      <label class="upload-btn" for="photo-input">Take or choose a photo</label>
+      <input id="photo-input" type="file" accept="image/*" capture="user" hidden />
+      <div id="preview-box" class="preview-box" hidden>
+        <img id="preview" alt="Your photo preview" />
+      </div>
+      <button id="analyze-btn" class="primary" disabled>Check my skin</button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section id="results" class="card" hidden>
+      <div id="mock-banner" class="mock-banner" hidden>
+        Demo data — the live YouCam API key is not connected yet, so these scores are a sample, not a real analysis.
+      </div>
+      <h2>2. Your skin scores</h2>
+      <p class="hint">Scores run 0–100. Higher means that area looks healthier in the photo.</p>
+      <div id="summary" class="summary"></div>
+      <div id="metrics" class="metrics"></div>
+
+      <h2>3. Routine check — next steps</h2>
+      <p class="hint">Based on your lowest scores. General information only, not medical advice.</p>
+      <ul id="next-steps" class="next-steps"></ul>
+      <p class="disclaimer">SkinCheck provides general information about how skin appears in a photo. It is not a medical diagnosis and is not medical advice. For any skin concern that persists or worries you, talk to a dermatologist.</p>
+      <button id="again-btn" class="secondary">Scan another photo</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
