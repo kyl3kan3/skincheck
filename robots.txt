@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /api/
+
+Sitemap: https://skincheck-seven.vercel.app/sitemap.xml
